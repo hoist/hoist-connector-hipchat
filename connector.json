@@ -55,6 +55,6 @@
     "getting_started": "./samples/getting_started.js"
   },
   "endpoints": {
-
+    "message": {}
   }
 }
