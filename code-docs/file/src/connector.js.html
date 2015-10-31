@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/connector.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/hoist/hoist-connector-hipchat.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/connector.js~HipChat.html">HipChat</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/connector.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  OAuth2ConnectorBase
+}
+from &apos;@hoist/oauth-connector&apos;;
+import request from &apos;request-promise&apos;;
+import moment from &apos;moment&apos;;
+import {
+  merge
+}
+from &apos;lodash&apos;;
+import logger from &apos;@hoist/logger&apos;;
+import config from &apos;config&apos;;
+let overrides = {
+
+};
+let apiBaseUri = `https://api.hipchat.com/v2`;
+/**
+ * A Hoist Connector for connecting to GitHub
+ * @extends {OAuthConnectorBase}
+ */
+export default class HipChat extends OAuth2ConnectorBase {
+
+  /**
+   * create a new connector
+   * @param {object} configuration - the configuration properties to use
+   */
+  constructor(configuration) {
+    super(merge({}, configuration, overrides));
+    this._configuration = configuration;
+    this._logger = logger.child({
+      cls: this.constructor.name
+    });
+  }
+
+  /**
+   * @override
+   */
+  receiveBounce(authorization) {
+    var authStep = authorization.get(&apos;currentStep&apos;);
+    if (!authStep) {
+      //no authorization has been done yet so lets get the authorization url and redirect the user there
+      let configuration = {
+        &quot;description&quot;: this._configuration.description,
+        &quot;key&quot;: &quot;io.hoist.&quot; + authorization.key,
+        &quot;name&quot;: this._configuration.name,
+        &quot;vendor&quot;: {
+          &quot;name&quot;: this._configuration.vendorName,
+          &quot;url&quot;: this._configuration.vendorUrl
+        },
+        &quot;links&quot;: {
+          &quot;self&quot;: `https://${config.get(&apos;Hoist.domains.bouncer&apos;)}/info/${authorization.key}`
+        },
+        &quot;capabilities&quot;: {
+          &quot;hipchatApiConsumer&quot;: {
+            &quot;scopes&quot;: this._configuration.scopes.split(&apos;,&apos;),
+            &quot;fromName&quot;: this._configuration.name
+          },
+          &quot;installable&quot;: {
+            &quot;allowGlobal&quot;: true,
+            &quot;allowRoom&quot;: true,
+            &quot;callbackUrl&quot;: `https://${config.get(&apos;Hoist.domains.bouncer&apos;)}/configure/${authorization.key}`,
+            &quot;installedUrl&quot;: `https://${config.get(&apos;Hoist.domains.bouncer&apos;)}/bounce`
+          },
+          &quot;webhook&quot;: [{
+            &quot;name&quot;: `${this._configuration.webhookName}`,
+            &quot;pattern&quot;: `${this._configuration.webhookPattern}`,
+            &quot;event&quot;: &quot;room_message&quot;,
+            &quot;url&quot;: `https://${config.get(&apos;Hoist.domains.endpoint&apos;)}/connector/${authorization.key}`
+          }]
+        }
+      };
+      this._logger.info({
+        configuration
+      });
+      return authorization.redirect(`https://www.hipchat.com/addons/install?url=data:application/json;base64,${new Buffer(JSON.stringify(configuration)).toString(&apos;base64&apos;)}`)
+    } else {
+      return authorization.done();
+    }
+  }
+  authorize(authorization) {
+    this._authorization = authorization;
+    this._configureClient({
+      clientId: authorization.get(&apos;clientId&apos;),
+      clientSecret: authorization.get(&apos;clientSecret&apos;),
+      baseSite: `https://www.hipchat.com/`
+    });
+    super.authorize(authorization);
+  }
+  intercept(authorization) {
+    return authorization.raise(this._configuration._connectorKey + &apos;:new:message&apos;, authorization.payload);
+  }
+  get(path) {
+    let uri = `${apiBaseUri}${path}`;
+    return this._performRequest(&apos;GET&apos;, uri).then((result) =&gt; {
+      return JSON.parse(result[0]);
+    });
+  }
+  post(path, body) {
+    let uri = `${apiBaseUri}${path}`;
+    return this._performRequest(&apos;POST&apos;, uri, body).then((result) =&gt; {
+      if (result &amp;&amp; result[0] &amp;&amp; result[0].length &gt; 0) {
+        return JSON.parse(result[0]);
+      }
+    });
+  }
+  patch(path, body) {
+    let uri = `${apiBaseUri}${path}`;
+    return this._performRequest(&apos;PATCH&apos;, uri, body).then((result) =&gt; {
+      return JSON.parse(result[0]);
+    });
+  }
+  delete(path) {
+    let uri = `${apiBaseUri}${path}`;
+    return this._performRequest(&apos;DELETE&apos;, uri);
+  }
+  _performRequest(...args) {
+    let expiresAt = this._authorization.get(&apos;ExpiresAt&apos;);
+    return Promise.resolve()
+      .then(() =&gt; {
+        if (moment().isAfter(expiresAt)) {
+          return this._refreshAccessToken(this._authorization);
+        }
+      }).then(() =&gt; {
+        return super._performRequest(...args);
+      });
+
+  }
+  _refreshAccessToken(authorization) {
+    return request({
+        method: &apos;GET&apos;,
+        url: `${apiBaseUri}/capabilities`,
+        json: true
+      })
+      .then((response) =&gt; {
+
+        return request({
+          method: &apos;POST&apos;,
+          url: response.capabilities.oauth2Provider.tokenUrl,
+          auth: {
+            username: authorization.get(&apos;clientId&apos;),
+            password: authorization.get(&apos;clientSecret&apos;)
+          },
+          body: {
+            grant_type: &apos;client_credentials&apos;,
+            scope: this._configuration.scopes.split(&apos;,&apos;)
+          },
+          json: true
+        });
+      }).then((response) =&gt; {
+        return authorization.set(&apos;AccessToken&apos;, response[&apos;access_token&apos;])
+          .then(() =&gt; {
+            return authorization.set(&apos;ExpiresAt&apos;, moment().utc().add(response[&apos;expires_in&apos;], &apos;seconds&apos;).toDate());
+          }).then(() =&gt; {
+            return authorization.setDisplayProperty(&apos;GroupName&apos;, response[&apos;group_name&apos;]);
+          });
+      });
+  }
+  configure(authorization) {
+    this._logger.info({
+      payload: authorization.payload,
+      configuration: this._configuration
+    }, &apos;configure&apos;);
+    return authorization.set(&apos;clientId&apos;, authorization.payload.oauthId)
+      .then(() =&gt; {
+        return authorization.set(&apos;clientSecret&apos;, authorization.payload.oauthSecret);
+      }).then(() =&gt; {
+        return authorization.set(&apos;groupId&apos;, authorization.payload.groupId);
+      }).then(() =&gt; {
+        return authorization.set(&apos;CapabilitiesUrl&apos;, authorization.payload.capabilitiesUrl);
+      }).then(() =&gt; {
+        return this._refreshAccessToken(authorization).then(() =&gt; {
+          return authorization.set(&apos;currentStep&apos;, &apos;configured&apos;);
+        });
+      }).then(() =&gt; {
+        return authorization.done();
+      });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.1)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "name": "HipChat",
+  "slug": "hipchat",
+  "url": "https://hipchat.com/",
+  "auth_types": {
+    "Public": {
+      "setup_help": "./samples/getting_started.md",
+      "requires_signing": true
+    }
+  },
+  "settings": [{
+    "key": "name",
+    "type": "text",
+    "description": "Application Name",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "description",
+    "type": "text",
+    "description": "Application Description",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "vendorName",
+    "type": "text",
+    "description": "Application Vendor Name",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "vendorUrl",
+    "type": "text",
+    "description": "Application Vendor Url",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "scopes",
+    "type": "text",
+    "description": "Application Authorization Scopes",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "webhookName",
+    "type": "text",
+    "description": "The name for the webhook to receive events on messages",
+    "for_types": ["Public"],
+    "required": true
+  }, {
+    "key": "webhookPattern",
+    "type": "text",
+    "description": "A regex pattern to match messages before they're sent to hoist",
+    "for_types": ["Public"],
+    "required": true
+  }],
+  "samples": {
+    "getting_started": "./samples/getting_started.js"
+  },
+  "endpoints": {
+
+  }
+}

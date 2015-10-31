@@ -1,0 +1,19 @@
+[Unit]
+Description=Deployment for hipchat Connector
+Requires=config.service
+After=config.service
+
+[Service]
+User=core
+Type=oneshot
+ExecStartPre=-/usr/bin/docker kill hipchat-connector-deploy
+ExecStartPre=-/usr/bin/docker rm hipchat-connector-deploy
+ExecStartPre=-/usr/bin/docker pull hoist/connector-hipchat:master
+ExecStart=/usr/bin/docker run -h hipchat-connector-deploy --name hipchat-connector-deploy -e "ROOT_CONNECTOR_DIR=/shares/connectors" --volumes-from config -P hoist/connector-hipchat:master
+ExecStop=/usr/bin/docker stop hipchat-connector-deploy
+ExecStopPost=-/usr/bin/docker kill hipchat-connector-deploy
+ExecStopPost=-/usr/bin/docker rm hipchat-connector-deploy
+TimeoutStartSec=30m
+
+[X-Fleet]
+MachineMetadata=container_type=web
