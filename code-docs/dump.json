@@ -143,7 +143,7 @@
     "memberof": "src/connector.js~HipChat",
     "longname": "src/connector.js~HipChat#receiveBounce",
     "access": null,
-    "description": null,
+    "description": "",
     "lineNumber": 38,
     "params": [
       {
@@ -431,7 +431,43 @@
     "generator": false
   },
   {
+    "__docId__": 18,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/poll.js",
+    "memberof": null,
+    "longname": "src/poll.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export default function () {\n  //dont do anything we handle via webhooks\n  return Promise.resolve();\n};\n"
+  },
+  {
     "__docId__": 19,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "poll",
+    "memberof": "src/poll.js",
+    "longname": "src/poll.js~poll",
+    "access": null,
+    "export": true,
+    "importPath": "hoist-connector-hipchat/src/poll.js",
+    "importStyle": "poll",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 21,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -440,11 +476,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 20,
+    "__docId__": 22,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -453,11 +489,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 21,
+    "__docId__": 23,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -466,11 +502,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 22,
+    "__docId__": 24,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -479,11 +515,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 23,
+    "__docId__": 25,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -492,11 +528,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 24,
+    "__docId__": 26,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -505,11 +541,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 25,
+    "__docId__": 27,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -518,11 +554,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 26,
+    "__docId__": 28,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -531,11 +567,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 27,
+    "__docId__": 29,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -544,11 +580,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 28,
+    "__docId__": 30,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -557,11 +593,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 29,
+    "__docId__": 31,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -570,11 +606,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 30,
+    "__docId__": 32,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -583,11 +619,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 31,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -596,11 +632,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 32,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -609,11 +645,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 33,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -622,11 +658,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 34,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -635,11 +671,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -648,11 +684,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -661,11 +697,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -674,11 +710,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -687,11 +723,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -700,11 +736,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -713,11 +749,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -726,11 +762,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -739,11 +775,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -752,11 +788,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -765,11 +801,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -778,11 +814,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -791,11 +827,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -804,11 +840,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -817,11 +853,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -830,11 +866,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -843,11 +879,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -856,11 +892,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -869,11 +905,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -882,11 +918,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -895,11 +931,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -908,11 +944,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -921,11 +957,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -934,11 +970,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -947,11 +983,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -960,11 +996,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -973,11 +1009,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -986,11 +1022,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -999,11 +1035,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1012,11 +1048,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1025,11 +1061,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1038,11 +1074,11 @@
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1051,11 +1087,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1064,11 +1100,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1077,11 +1113,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~Element",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1090,11 +1126,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~Event",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1103,11 +1139,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~Node",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1116,11 +1152,11 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1129,11 +1165,24 @@
     "memberof": "BuiltinExternal/WebAPIExternal.js",
     "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "access": null,
-    "description": null,
+    "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -1146,7 +1195,7 @@
     "content": "import HipChatConnector from '../../lib/connector';\nimport sinon from 'sinon';\nimport {\n  expect\n}\nfrom 'chai';\nimport config from 'config';\n\ndescribe('authorization steps', () => {\n  let connector;\n  let key = 'connectorkey';\n  let configuration = {\n    \"description\": \"My Addon\",\n    \"key\": `io.hoist.${key}`,\n    \"name\": \"Integration Name\",\n    \"vendor\": {\n      \"name\": \"Company Name\",\n      \"url\": \"http://hoist.io\"\n    },\n    \"links\": {\n      \"self\": `https://bouncer.hoist.test/info/${key}`\n    },\n    \"capabilities\": {\n      \"hipchatApiConsumer\": {\n        \"scopes\": [\n          \"send_notification\",\n          \"send_message\",\n          \"view_messages\"\n        ],\n        \"fromName\": \"Integration Name\"\n      },\n      \"installable\": {\n        \"allowGlobal\": true,\n        \"allowRoom\": true,\n        \"callbackUrl\": `https://bouncer.hoist.test/configure/${key}`,\n        \"installedUrl\": \"https://bouncer.hoist.test/bounce\"\n      },\n      \"webhook\": [{\n        \"name\": 'webhookname',\n        \"pattern\": 'pattern',\n        \"event\": \"room_message\",\n        \"url\": `https://endpoint.hoist.test/connector/${key}`\n      }]\n    }\n  };\n  before(() => {\n    connector = new HipChatConnector({\n      description: configuration.description,\n      name: configuration.name,\n      vendorName: configuration.vendor.name,\n      vendorUrl: configuration.vendor.url,\n      scopes: configuration.capabilities.hipchatApiConsumer.scopes.join(','),\n      webhookName: configuration.capabilities.webhook[0].name,\n      webhookPattern: configuration.capabilities.webhook[0].pattern\n    });\n  });\n  describe('on first bounce', () => {\n    let bounce;\n    before(() => {\n      bounce = {\n        get: function () {\n          return undefined;\n        },\n        delete: function () {\n          return Promise.resolve(null);\n        },\n        set: function () {\n          console.log('set', arguments);\n          return Promise.resolve(null);\n        },\n        redirect: function () {\n          console.log('redirect', arguments);\n          return Promise.resolve(null);\n        },\n        done: function () {\n          console.log('done', arguments);\n          return Promise.resolve(null);\n        },\n        key: key\n      };\n      sinon.spy(bounce, 'get');\n      sinon.spy(bounce, 'set');\n      sinon.spy(bounce, 'redirect');\n      return connector.receiveBounce(bounce);\n    });\n    it('should redirect user to install addon', () => {\n      return expect(bounce.redirect).to.have.been.calledWith(`https://www.hipchat.com/addons/install?url=data:application/json;base64,${new Buffer(JSON.stringify(configuration)).toString('base64')}`);\n    });\n  });\n});\n"
   },
   {
-    "__docId__": 75,
+    "__docId__": 78,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1160,7 +1209,7 @@
     "lineNumber": 9
   },
   {
-    "__docId__": 76,
+    "__docId__": 79,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1174,7 +1223,7 @@
     "lineNumber": 57
   },
   {
-    "__docId__": 77,
+    "__docId__": 80,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -1188,7 +1237,7 @@
     "lineNumber": 86
   },
   {
-    "__docId__": 78,
+    "__docId__": 81,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -1201,7 +1250,7 @@
     "content": "import config from 'config';\nimport HipChatConnector from '../../src/connector';\nimport {\n  expect\n}\nfrom 'chai';\ndescribe('messages api', () => {\n  let connector;\n  before(() => {\n    connector = new HipChatConnector({\n      scopes: \"send_message,view_messages,send_notification\"\n    })\n\n  });\n\n  describe('get all messages', function () {\n    this.timeout(5000);\n    let result;\n    let data = {};\n    let authorization = {\n      get: (key) => {\n        return data[key];\n      },\n      set: (key, value) => {\n        return Promise.resolve()\n          .then(() => {\n            data[key] = value;\n          });\n      },\n      setDisplayProperty: () => {}\n\n    }\n    before(() => {\n      data.clientSecret = config.get('clientSecret');\n      data.clientId = config.get('clientId');\n      data.AccessToken = config.get('AccessToken');\n      data.ExpiresAt = config.get('ExpiresAt');\n      connector.authorize(authorization);\n      return connector.get('/room/test/history').then((r) => {\n        result = r;\n      });\n    });\n    it('returns list of rooms', () => {\n      return expect(result.items[0].message).to.eql(\"hoist hi\");\n    });\n  });\n  describe('send a notification', function () {\n    this.timeout(5000);\n    let result;\n    let data = {};\n    let authorization = {\n      get: (key) => {\n        return data[key];\n      },\n      set: (key, value) => {\n        return Promise.resolve()\n          .then(() => {\n            data[key] = value;\n          });\n      },\n      setDisplayProperty: () => {}\n\n    }\n    before(() => {\n      data.clientSecret = config.get('clientSecret');\n      data.clientId = config.get('clientId');\n      data.AccessToken = config.get('AccessToken');\n      data.ExpiresAt = config.get('ExpiresAt');\n      connector.authorize(authorization);\n      return (result = connector.post('/room/test/notification', {\n        message: 'hi from unit tests'\n      }));\n    });\n    it('returns list of rooms', () => {\n      return expect(result).to.be.fulfilled;\n    });\n  });\n});\n"
   },
   {
-    "__docId__": 79,
+    "__docId__": 82,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1215,7 +1264,7 @@
     "lineNumber": 7
   },
   {
-    "__docId__": 80,
+    "__docId__": 83,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1229,7 +1278,7 @@
     "lineNumber": 16
   },
   {
-    "__docId__": 81,
+    "__docId__": 84,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -1243,7 +1292,7 @@
     "lineNumber": 43
   },
   {
-    "__docId__": 82,
+    "__docId__": 85,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1257,7 +1306,7 @@
     "lineNumber": 47
   },
   {
-    "__docId__": 83,
+    "__docId__": 86,
     "kind": "testIt",
     "static": true,
     "variation": null,

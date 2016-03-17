@@ -1,0 +1,1 @@
+{"version":3,"sources":["poll.js"],"names":[],"mappings":";;;;;;kBAAe,YAAY;;AAEzB,SAAO,QAAQ,OAAR,EAAP,CAFyB;CAAZ;;AAGd","file":"poll.js","sourcesContent":["export default function () {\n  //dont do anything we handle via webhooks\n  return Promise.resolve();\n};\n"],"sourceRoot":"/source/"}

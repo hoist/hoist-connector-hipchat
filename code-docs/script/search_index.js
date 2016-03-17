@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "hoist-connector-hipchat/src/poll.js~poll",
+    "function/index.html#static-function-poll",
+    "<span>poll</span> <span class=\"search-result-import-path\">hoist-connector-hipchat/src/poll.js</span>",
+    "function"
+  ],
+  [
     "builtinexternal/ecmascriptexternal.js~array",
     "external/index.html",
     "BuiltinExternal/ECMAScriptExternal.js~Array",
@@ -288,6 +294,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "builtinexternal/webapiexternal.js~audiocontext",
+    "external/index.html",
+    "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "external"
+  ],
+  [
     "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
     "external/index.html",
     "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
@@ -436,6 +448,12 @@ window.esdocSearchIndex = [
     "class/src/connector.js~HipChat.html#instance-method-receiveBounce",
     "src/connector.js~HipChat#receiveBounce",
     "method"
+  ],
+  [
+    "src/poll.js",
+    "file/src/poll.js.html",
+    "src/poll.js",
+    "file"
   ],
   [
     "tests/integration_tests/auth_tests.js",
