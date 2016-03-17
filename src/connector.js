@@ -92,21 +92,21 @@ export default class HipChat extends OAuth2ConnectorBase {
   get(path) {
     let uri = `${apiBaseUri}${path}`;
     return this._performRequest('GET', uri).then((result) => {
-      return JSON.parse(result[0]);
+      return JSON.parse(result);
     });
   }
   post(path, body) {
     let uri = `${apiBaseUri}${path}`;
     return this._performRequest('POST', uri, body).then((result) => {
-      if (result && result[0] && result[0].length > 0) {
-        return JSON.parse(result[0]);
+      if (result && result.length > 0) {
+        return JSON.parse(result);
       }
     });
   }
   patch(path, body) {
     let uri = `${apiBaseUri}${path}`;
     return this._performRequest('PATCH', uri, body).then((result) => {
-      return JSON.parse(result[0]);
+      return JSON.parse(result);
     });
   }
   delete(path) {
