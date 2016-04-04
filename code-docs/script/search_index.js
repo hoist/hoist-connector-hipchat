@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "hoist-connector-hipchat/src/views/edit.js~editform",
+    "class/src/views/edit.js~EditForm.html",
+    "<span>EditForm</span> <span class=\"search-result-import-path\">hoist-connector-hipchat/src/views/edit.js</span>",
+    "class"
+  ],
+  [
     "hoist-connector-hipchat/src/connector.js~hipchat",
     "class/src/connector.js~HipChat.html",
     "<span>HipChat</span> <span class=\"search-result-import-path\">hoist-connector-hipchat/src/connector.js</span>",
@@ -454,6 +460,36 @@ window.esdocSearchIndex = [
     "file/src/poll.js.html",
     "src/poll.js",
     "file"
+  ],
+  [
+    "src/views/edit.js",
+    "file/src/views/edit.js.html",
+    "src/views/edit.js",
+    "file"
+  ],
+  [
+    "src/views/edit.js~editform#connect",
+    "class/src/views/edit.js~EditForm.html#instance-method-connect",
+    "src/views/edit.js~EditForm#connect",
+    "method"
+  ],
+  [
+    "src/views/edit.js~editform#constructor",
+    "class/src/views/edit.js~EditForm.html#instance-constructor-constructor",
+    "src/views/edit.js~EditForm#constructor",
+    "method"
+  ],
+  [
+    "src/views/edit.js~editform#render",
+    "class/src/views/edit.js~EditForm.html#instance-method-render",
+    "src/views/edit.js~EditForm#render",
+    "method"
+  ],
+  [
+    "src/views/edit.js~editform#state",
+    "class/src/views/edit.js~EditForm.html#instance-member-state",
+    "src/views/edit.js~EditForm#state",
+    "member"
   ],
   [
     "tests/integration_tests/auth_tests.js",

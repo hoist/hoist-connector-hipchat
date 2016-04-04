@@ -23,18 +23,6 @@ class EditForm extends C.View {
               return this.connect();
             }} />
         </C.Panel>
-        {this.props.connectorInstance ? <C.Panel name="Events" slug="events">
-        <C.PageHeader
-          title="Check the boxes of the events you want to subscribe to."
-          subTitle="Checking a box will automatically subscribe you to that event." />
-          <C.CheckboxGrid
-            items={this.getAvailableEvents()}
-            checked={this.getSubscribedEvents()}
-            onChange={this.props.onSubscribe} />
-        </C.Panel> : <C.Panel name="Events" slug="events">
-          <C.EventsGrid.Header
-            title="Events are available once you've connected." />
-        </C.Panel>}
       </C.Page>
     );
   }
