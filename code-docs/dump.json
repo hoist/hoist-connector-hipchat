@@ -467,7 +467,136 @@
     "generator": false
   },
   {
+    "__docId__": 20,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/edit.js",
+    "memberof": null,
+    "longname": "src/views/edit.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 3,
+    "content": "/* globals UI */\n\nvar C = UI.Views.Connector;\n\nclass EditForm extends C.View {\n  constructor(props) {\n    super(props);\n    this.state = {\n      events: []\n    };\n    if (!props.connector) {\n      this.state.mode = 'connect';\n    }\n  }\n  connect() {\n    this.props.onConnect();\n  }\n  render() {\n    return (\n      <C.Page default=\"setup\" {...this.props}>\n        <C.Panel name=\"Setup\" slug=\"setup\">\n          <UI.FormElements.Button text={this.props.connectorInstance ? 'Reauthorize' : 'Connect'} type=\"large\" onClick={()=>{\n              return this.connect();\n            }} />\n        </C.Panel>\n        {this.props.connectorInstance ? <C.Panel name=\"Events\" slug=\"events\">\n        <C.PageHeader\n          title=\"Check the boxes of the events you want to subscribe to.\"\n          subTitle=\"Checking a box will automatically subscribe you to that event.\" />\n          <C.CheckboxGrid\n            items={this.getAvailableEvents()}\n            checked={this.getSubscribedEvents()}\n            onChange={this.props.onSubscribe} />\n        </C.Panel> : <C.Panel name=\"Events\" slug=\"events\">\n          <C.PageHeader\n            title=\"Events are available once you've connected.\" />\n        </C.Panel>}\n      </C.Page>\n    );\n  }\n}\n\nexport default EditForm;\nglobal.EditForm = EditForm;\n"
+  },
+  {
     "__docId__": 21,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "C",
+    "memberof": "src/views/edit.js",
+    "longname": "src/views/edit.js~C",
+    "access": null,
+    "export": false,
+    "importPath": "hoist-connector-hipchat/src/views/edit.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "EditForm",
+    "memberof": "src/views/edit.js",
+    "longname": "src/views/edit.js~EditForm",
+    "access": null,
+    "export": true,
+    "importPath": "hoist-connector-hipchat/src/views/edit.js",
+    "importStyle": "EditForm",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "C~C.View"
+    ]
+  },
+  {
+    "__docId__": 23,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/views/edit.js~EditForm",
+    "longname": "src/views/edit.js~EditForm#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 24,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/views/edit.js~EditForm",
+    "longname": "src/views/edit.js~EditForm#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "connect",
+    "memberof": "src/views/edit.js~EditForm",
+    "longname": "src/views/edit.js~EditForm#connect",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 26,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/edit.js~EditForm",
+    "longname": "src/views/edit.js~EditForm#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 28,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -480,7 +609,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 22,
+    "__docId__": 29,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -493,7 +622,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 23,
+    "__docId__": 30,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -506,7 +635,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 24,
+    "__docId__": 31,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -519,7 +648,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 25,
+    "__docId__": 32,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -532,7 +661,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 26,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -545,7 +674,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 27,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -558,7 +687,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 28,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -571,7 +700,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 29,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -584,7 +713,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 30,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -597,7 +726,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 31,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -610,7 +739,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 32,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -623,7 +752,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 33,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -636,7 +765,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 34,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -649,7 +778,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -662,7 +791,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -675,7 +804,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -688,7 +817,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -701,7 +830,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -714,7 +843,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -727,7 +856,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -740,7 +869,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -753,7 +882,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -766,7 +895,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -779,7 +908,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -792,7 +921,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -805,7 +934,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -818,7 +947,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -831,7 +960,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -844,7 +973,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -857,7 +986,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -870,7 +999,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -883,7 +1012,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -896,7 +1025,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -909,7 +1038,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -922,7 +1051,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -935,7 +1064,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -948,7 +1077,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -961,7 +1090,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -974,7 +1103,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -987,7 +1116,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1000,7 +1129,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1013,7 +1142,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1026,7 +1155,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1039,7 +1168,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1052,7 +1181,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1065,7 +1194,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1078,7 +1207,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1091,7 +1220,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1104,7 +1233,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1117,7 +1246,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1130,7 +1259,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1143,7 +1272,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1156,7 +1285,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1169,7 +1298,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1182,7 +1311,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 84,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -1195,7 +1324,7 @@
     "content": "import HipChatConnector from '../../lib/connector';\nimport sinon from 'sinon';\nimport {\n  expect\n}\nfrom 'chai';\nimport config from 'config';\n\ndescribe('authorization steps', () => {\n  let connector;\n  let key = 'connectorkey';\n  let configuration = {\n    \"description\": \"My Addon\",\n    \"key\": `io.hoist.${key}`,\n    \"name\": \"Integration Name\",\n    \"vendor\": {\n      \"name\": \"Company Name\",\n      \"url\": \"http://hoist.io\"\n    },\n    \"links\": {\n      \"self\": `https://bouncer.hoist.test/info/${key}`\n    },\n    \"capabilities\": {\n      \"hipchatApiConsumer\": {\n        \"scopes\": [\n          \"send_notification\",\n          \"send_message\",\n          \"view_messages\"\n        ],\n        \"fromName\": \"Integration Name\"\n      },\n      \"installable\": {\n        \"allowGlobal\": true,\n        \"allowRoom\": true,\n        \"callbackUrl\": `https://bouncer.hoist.test/configure/${key}`,\n        \"installedUrl\": \"https://bouncer.hoist.test/bounce\"\n      },\n      \"webhook\": [{\n        \"name\": 'webhookname',\n        \"pattern\": 'pattern',\n        \"event\": \"room_message\",\n        \"url\": `https://endpoint.hoist.test/connector/${key}`\n      }]\n    }\n  };\n  before(() => {\n    connector = new HipChatConnector({\n      description: configuration.description,\n      name: configuration.name,\n      vendorName: configuration.vendor.name,\n      vendorUrl: configuration.vendor.url,\n      scopes: configuration.capabilities.hipchatApiConsumer.scopes.join(','),\n      webhookName: configuration.capabilities.webhook[0].name,\n      webhookPattern: configuration.capabilities.webhook[0].pattern\n    });\n  });\n  describe('on first bounce', () => {\n    let bounce;\n    before(() => {\n      bounce = {\n        get: function () {\n          return undefined;\n        },\n        delete: function () {\n          return Promise.resolve(null);\n        },\n        set: function () {\n          console.log('set', arguments);\n          return Promise.resolve(null);\n        },\n        redirect: function () {\n          console.log('redirect', arguments);\n          return Promise.resolve(null);\n        },\n        done: function () {\n          console.log('done', arguments);\n          return Promise.resolve(null);\n        },\n        key: key\n      };\n      sinon.spy(bounce, 'get');\n      sinon.spy(bounce, 'set');\n      sinon.spy(bounce, 'redirect');\n      return connector.receiveBounce(bounce);\n    });\n    it('should redirect user to install addon', () => {\n      return expect(bounce.redirect).to.have.been.calledWith(`https://www.hipchat.com/addons/install?url=data:application/json;base64,${new Buffer(JSON.stringify(configuration)).toString('base64')}`);\n    });\n  });\n});\n"
   },
   {
-    "__docId__": 78,
+    "__docId__": 85,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1209,7 +1338,7 @@
     "lineNumber": 9
   },
   {
-    "__docId__": 79,
+    "__docId__": 86,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1223,7 +1352,7 @@
     "lineNumber": 57
   },
   {
-    "__docId__": 80,
+    "__docId__": 87,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -1237,7 +1366,7 @@
     "lineNumber": 86
   },
   {
-    "__docId__": 81,
+    "__docId__": 88,
     "kind": "testFile",
     "static": true,
     "variation": null,
@@ -1250,7 +1379,7 @@
     "content": "import config from 'config';\nimport HipChatConnector from '../../src/connector';\nimport {\n  expect\n}\nfrom 'chai';\ndescribe('messages api', () => {\n  let connector;\n  before(() => {\n    connector = new HipChatConnector({\n      scopes: \"send_message,view_messages,send_notification\"\n    })\n\n  });\n\n  describe('get all messages', function () {\n    this.timeout(5000);\n    let result;\n    let data = {};\n    let authorization = {\n      get: (key) => {\n        return data[key];\n      },\n      set: (key, value) => {\n        return Promise.resolve()\n          .then(() => {\n            data[key] = value;\n          });\n      },\n      setDisplayProperty: () => {}\n\n    }\n    before(() => {\n      data.clientSecret = config.get('clientSecret');\n      data.clientId = config.get('clientId');\n      data.AccessToken = config.get('AccessToken');\n      data.ExpiresAt = config.get('ExpiresAt');\n      connector.authorize(authorization);\n      return connector.get('/room/test/history').then((r) => {\n        result = r;\n      });\n    });\n    it('returns list of rooms', () => {\n      return expect(result.items[0].message).to.eql(\"hoist hi\");\n    });\n  });\n  describe('send a notification', function () {\n    this.timeout(5000);\n    let result;\n    let data = {};\n    let authorization = {\n      get: (key) => {\n        return data[key];\n      },\n      set: (key, value) => {\n        return Promise.resolve()\n          .then(() => {\n            data[key] = value;\n          });\n      },\n      setDisplayProperty: () => {}\n\n    }\n    before(() => {\n      data.clientSecret = config.get('clientSecret');\n      data.clientId = config.get('clientId');\n      data.AccessToken = config.get('AccessToken');\n      data.ExpiresAt = config.get('ExpiresAt');\n      connector.authorize(authorization);\n      return (result = connector.post('/room/test/notification', {\n        message: 'hi from unit tests'\n      }));\n    });\n    it('returns list of rooms', () => {\n      return expect(result).to.be.fulfilled;\n    });\n  });\n});\n"
   },
   {
-    "__docId__": 82,
+    "__docId__": 89,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1264,7 +1393,7 @@
     "lineNumber": 7
   },
   {
-    "__docId__": 83,
+    "__docId__": 90,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1278,7 +1407,7 @@
     "lineNumber": 16
   },
   {
-    "__docId__": 84,
+    "__docId__": 91,
     "kind": "testIt",
     "static": true,
     "variation": null,
@@ -1292,7 +1421,7 @@
     "lineNumber": 43
   },
   {
-    "__docId__": 85,
+    "__docId__": 92,
     "kind": "testDescribe",
     "static": true,
     "variation": null,
@@ -1306,7 +1435,7 @@
     "lineNumber": 47
   },
   {
-    "__docId__": 86,
+    "__docId__": 93,
     "kind": "testIt",
     "static": true,
     "variation": null,
